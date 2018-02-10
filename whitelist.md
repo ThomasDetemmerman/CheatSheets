@@ -1,4 +1,4 @@
-# Prevent from mails from being marked as spam
+# Prevent mails from being marked as spam
 
 # SPF
 - Type: `TXT record`
