@@ -44,7 +44,7 @@ default._domainkey.[domain.com] [domain.com]:default:/etc/opendkim/keys/[domain.
 ```
 *@[domain.com] default._domainkey.[domain.com]
 ```
-## ThrustedHosts
+## TrustedHosts
 ```
 [domain.com]
 [FQDN] #hostname.domain.com
