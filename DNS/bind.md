@@ -99,15 +99,21 @@ De volgende lijnen code moeten toegevoegd worden aan de **parent**
     [int];  refresh
     [int]; retry
     [int]; expire #dit op 60 seconden voor troubleshoot?
-    [int]; minimum
+    [int]; minimum #het kan ook dit zijn dat bij een labo op 60 moet staan?
     )
             IN NS [dnsservername] #voorafgegaan door een tap of spatie(s)
-[client]    IN A [ip]
-[client]    IN A [ip]
-[client]    IN A [ip]
+            IN NS [2de dnsservername] #zie delegeren subdomain
+[dnsservername]        IN A [ip]
+[2de dnsservername]    IN A [ip]
+[client]               IN A [ip]
+[client]               IN A [ip]
 
 )
 ```
+**Belangrijk hierbij is:**
+  - dns definiëren in SOA record
+  - dns definiëren in NS record
+  - dns definiëren in A record
 
 ## reverse DNS zone
 ```bash
