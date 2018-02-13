@@ -58,7 +58,7 @@ zone "iii.hogent.be" {
 ```bash
 zone "16.168.192.in-adr.arpa"{    #omgekeerde CIDR notatie van 192.168.16/24
   type [master|slave];
-  file "192.168.192"
+  file "192.168.192";
   masters { [ip master]; }  #enkel voor slave
 };
 ```
