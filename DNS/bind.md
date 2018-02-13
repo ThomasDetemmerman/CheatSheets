@@ -1,3 +1,28 @@
+inhoud:
+- troubleshoot en stappenplan
+- configfile
+- records
+
+
+# Troubleshoot en stappenplan labo
+
+**stappenplan**
+- resolv.conf aanpassen (0.0.0.0 of loopback of verwijderen).
+- verwijzen naar root dns (behlave als je root DNS bent)
+- timeout instellen op 60
+
+**debuggen**
+- config check: `named-checkconf`
+- `tail -f /var/log/messages`
+- `dig axfr [dns]`
+
+```bash
+dig axfr ugent.be
+ns.belnet.be.		748	IN	AAAA	2001:6a8:3c80:c000::40
+ns.belnet.be.		748	IN	AAAA	2001:610:188:441:145::7:163
+```
+*tweede kolom zou op 60 moeten staan*
+
 # named.conf
 **te vinden in:** `/etc/named.conf`
 
@@ -73,7 +98,7 @@ De volgende lijnen code moeten toegevoegd worden aan de **parent**
     [int]; #serial
     [int];  refresh
     [int]; retry
-    [int]; expire
+    [int]; expire #dit op 60 seconden voor troubleshoot?
     [int]; minimum
     )
             IN NS [dnsservername] #voorafgegaan door een tap of spatie(s)
