@@ -120,3 +120,16 @@ De volgende lijnen code moeten toegevoegd worden aan de **parent**
 ;/var/named/192.168.16
 17 IN PTR [client].[subsubdomain].[subdomain].ugent.be. #De 17 slaat op het laatste cijfer van het ip dus zijn volledig ip zal zijn: 192.168.16.17
 ```
+
+## named.ca
+Zodat nameservers zich in de hiërarchie naar boven kunnen werken
+
+```bash
+;/var/named/named.ca
+
+. [TTL] IN NS [FQDN ROOT DNS 1]
+[FQDN ROOT DNS 1] [TTL] A [ip root dns 1]
+
+
+```
+in de cursus staat enkel bij de allereerste record een IN?
