@@ -1,0 +1,3 @@
+ssh key toevoegen:
+ssh-keygen -t rsa
+ssh-add -K .ssh/{sshfile}
