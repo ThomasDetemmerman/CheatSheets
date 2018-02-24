@@ -31,6 +31,5 @@ docker start ec98ccdd9f94 -a
 
 ## stop and delete all containers
 ```bash
-docker stop $(docker ps -a -q)
-docker rm $(docker ps -a -q)
+docker stop $(docker ps -a -q) && docker rm $(docker ps -a -q)
 ```
