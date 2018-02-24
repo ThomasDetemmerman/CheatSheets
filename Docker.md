@@ -20,8 +20,9 @@ docker run -t -d --name tick vop_iot/tick
 ```
 ## start container
 ```bash
-docker start ec98ccdd9f94
+docker start ec98ccdd9f94 -a
 ```
+-a will show all actions.
 
 ## access container
 ```bash
