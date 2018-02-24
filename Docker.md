@@ -14,7 +14,12 @@ docker ps -a //all containers
 docker ps //only running containers
 ```
 
-## run containers
+## Create container from image
 ```bash
 docker run -t -d --name tick vop_iot/tick
 ```
+
+## access container
+```bash
+ docker exec -t -i a8f0e8326395 /bin/bash
+ ```
