@@ -18,7 +18,10 @@ docker ps //only running containers
 ```bash
 docker run -t -d --name tick vop_iot/tick
 ```
-
+## start container
+```bash
+  docker start ec98ccdd9f94
+  ```
 ## access container
 ```bash
  docker exec -t -i a8f0e8326395 /bin/bash
