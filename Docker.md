@@ -1,4 +1,18 @@
  # docker
+ 
+ ## Push to cloud
+### Create image of running container
+```sh
+docker commit c8a30a9124a3 thomasdetemmerman/telegraf-coap
+```
+### push to cloud
+```sh
+login
+```
+```sh
+ docker push thomasdetemmerman/telegraf-coap
+ ```
+ 
  ## Build image
  ```bash
  docker build -t vop_iot/tick .
