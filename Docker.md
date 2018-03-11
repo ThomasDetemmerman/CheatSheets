@@ -42,13 +42,13 @@ docker start ec98ccdd9f94 -a
 ```bash
  docker exec -t -i a8f0e8326395 /bin/bash
  ```
-
-## stop and delete all containers
+## Stop and Delete
+### stop and delete all containers
 ```bash
 docker stop $(docker ps -a -q) && docker rm $(docker ps -a -q)
 ```
 
-## delete all images
+### delete all images
 ```sh
 docker rmi $(docker images -q)
 ```
