@@ -1,5 +1,8 @@
  # docker
- 
+## run and go inside
+```
+docker run -it <image> /bin/bash
+```
  ## Push to cloud
 ### Create image of running container
 ```sh
