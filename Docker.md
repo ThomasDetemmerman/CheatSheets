@@ -1,7 +1,9 @@
  # docker
 ## run and go inside
 ```
-docker run -it <image> /bin/bash
+docker run -it ubuntu bash
+or
+docker run -it --entrypoint /bin/bash <image>
 ```
  ## Push to cloud
 ### Create image of running container
