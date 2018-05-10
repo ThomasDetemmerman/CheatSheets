@@ -10,3 +10,6 @@
 ```bash
 /usr/sbin/[service]d
 ```
+
+# Infinite loop
+while true; do echo 'sleeping' && sleep 9; done
