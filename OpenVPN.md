@@ -11,3 +11,8 @@ cd /etc/openvpn/easy-rsa
 cp /etc/openvpn/easy-rsa/openssl-1.0.0.cnf /etc/openvpn/easy-rsa/openssl.cnf
 
 ```
+
+## Service starten
+```bash
+systemctl restart openvpn@server.service #server = naam conf file
+```
