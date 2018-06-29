@@ -18,5 +18,9 @@ systemctl restart openvpn@server.service #server = naam conf file
 ```
 ## Boot VPN client
 ```bash
-openvpn --config /var/openvpn/[vpn config name].ovpn
+openvpn --config /var/openvpn/[vpn config name].ovpn --daemon
+
+//running the above as a service
+mv [vpn config name].ovpn [vpn config name].conf
+systemctl restart openvpn@server.service
 ```
