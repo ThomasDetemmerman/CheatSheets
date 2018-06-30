@@ -6,6 +6,7 @@ vim /etc/systemd/system/[service].service
 ```
 [service]
 Restart=always
+RestartSec=3
 ```
  restart systemctl (ironically)
  ```
