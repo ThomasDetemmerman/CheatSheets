@@ -16,3 +16,8 @@
 
 # Infinite loop
 while true; do echo 'sleeping' && sleep 9; done
+
+# Delete everyting besides
+```bash
+find . ! -name "*.mp3" -delete
+```
