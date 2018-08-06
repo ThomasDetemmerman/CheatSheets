@@ -42,6 +42,5 @@ Write-Host "Submitted user $name$domain with password $Password (return status: 
 
 #close browser
 $ie.quit()
-}
 
 
