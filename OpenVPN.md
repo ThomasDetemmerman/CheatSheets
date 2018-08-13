@@ -12,6 +12,31 @@ cp /etc/openvpn/easy-rsa/openssl-1.0.0.cnf /etc/openvpn/easy-rsa/openssl.cnf
 
 ```
 
+### example config file
+```
+client
+proto udp
+remote [VPN SERVER IP] [PORT] udp
+dev tun
+topology subnet
+pull
+user nobody
+group nobody
+
+<ca>
+-----BEGIN CERTIFICATE-----
+[omitted] #this is for every client the same!
+-----END CERTIFICATE-----
+</ca>
+<cert>
+[omitted - the entire file]
+</cert>
+<key>
+[omitted - the entire file]
+</key>
+
+```
+
 ## Service starten
 ```bash
 systemctl restart openvpn@server.service #server = naam conf file
