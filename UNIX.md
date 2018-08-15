@@ -21,3 +21,12 @@ while true; do echo 'sleeping' && sleep 9; done
 ```bash
 find . ! -name "*.mp3" -delete
 ```
+
+#Find processes
+```
+# find running processes
+ps -e
+
+#find there location (for instance if the command cron is not found but it is installed)
+which [process]
+```
