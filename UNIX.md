@@ -1,3 +1,20 @@
+## Create own service
+```bash
+ cd /etc/systemd/system/pulseaudio.service
+```
+```bash
+[Unit]
+Description=PulseAudio Daemon
+
+[Install]
+WantedBy=multi-user.target
+
+[Service]
+Type=simple
+PrivateTmp=true
+ExecStart=/usr/bin/pulseaudio –options
+```
+
 ## interpreter
 ```bash
 #!/usr/bin/env bash
