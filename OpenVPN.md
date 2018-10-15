@@ -21,7 +21,7 @@ dev tun
 topology subnet
 pull
 user nobody
-group nobody
+group nogroup
 
 <ca>
 -----BEGIN CERTIFICATE-----
