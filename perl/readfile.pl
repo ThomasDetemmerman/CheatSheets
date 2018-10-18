@@ -3,9 +3,9 @@ $^I = ".bak";
 
 my $url     = 'http://www.sunrise-and-sunset.com/nl/sun/belgie/ninove';
 my $logfile = '/var/log/sunsetManager.log';
-@ARGV = '/boot/config.txt';
+@ARGV = '/boot/config.txt'
 
-my $html = qx{wget --quiet --output-document=- $url};
+  my $html = qx{wget --quiet --output-document=- $url};
 $html =~ s/\s//g;    #remove all whitespace
 
 #array (hour, min)
@@ -26,9 +26,11 @@ if ( timeMatch(@zonsondergang) || timeMatch(@zonsondergang) ) {
             #Value of the parentheses is accessed by $1
             $set = $1 == 1 ? 0 : 1;
             print "disable_camera_led=$set\n";
-         }
+            logManager("disable_camera_led=$set");
+
+#we do nothing with all other lines of the file and simply place them back by printing themout
+        }
         else {
-            #we do nothing with all other lines of the file and simply place them back by printing themout
             print $_;
         }
     }
@@ -37,10 +39,7 @@ if ( timeMatch(@zonsondergang) || timeMatch(@zonsondergang) ) {
 #usage: timeMatch($hour,$minutes)
 sub timeMatch {
     my ( $parahour, $paramin ) = @_;
-    my (
-        $sec,  $currentmin, $currenthour, $mday, $mon,
-        $year, $wday,       $yday,        $isdst
-    ) = localtime(time);
+    my ( $sec, $currentmin, $currenthour ) = localtime(time);
     $decimalvalueofparamin    = substr( $paramin,    0, 1 );
     $decimalvalueofCurrentmin = substr( $currentmin, 0, 1 );
 
@@ -53,4 +52,13 @@ sub timeMatch {
     else {
         return false;
     }
+}
+
+#usage: timeMatch($hour,$minutes)
+sub logManager {
+    open( my $fh, '>>', $logfile ) or die "Could not open file '$logfile' $!";
+    my ($content) = @_;
+    my ( $sec, $m, $H ) = localtime(time);
+    print $fh $m . ":" . $H . " | " . $content . "\n";
+    close $fh;
 }
