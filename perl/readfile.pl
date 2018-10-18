@@ -2,8 +2,8 @@
 $^I = ".bak";
 
 my $url     = 'http://www.sunrise-and-sunset.com/nl/sun/belgie/ninove';
-my $logfile = 'log';
-@ARGV = "file";
+my $logfile = '/var/log/sunsetManager.log';
+@ARGV = '/boot/config.txt';
 
 my $html = qx{wget --quiet --output-document=- $url};
 $html =~ s/\s//g;    #remove all whitespace
