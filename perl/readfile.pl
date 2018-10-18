@@ -2,10 +2,10 @@
 $^I = ".bak";
 
 my $url     = 'http://www.sunrise-and-sunset.com/nl/sun/belgie/ninove';
-my $logfile = '/var/log/sunsetManager.log';
-@ARGV = '/boot/config.txt'
+my $logfile = 'log';
+@ARGV = "file";
 
-  my $html = qx{wget --quiet --output-document=- $url};
+my $html = qx{wget --quiet --output-document=- $url};
 $html =~ s/\s//g;    #remove all whitespace
 
 #array (hour, min)
@@ -16,7 +16,7 @@ $html =~ s/\s//g;    #remove all whitespace
 foreach (@zonsopgang)    { $_ =~ s/^0//; }
 foreach (@zonsondergang) { $_ =~ s/^0//; }
 
-if ( timeMatch(@zonsondergang) || timeMatch(@zonsondergang) ) {
+if ( timeMatch(@zonsondergang) || timeMatch(@zonsopgang) ) {
     while (<>) {
 
         #if line matches this regex
@@ -27,7 +27,7 @@ if ( timeMatch(@zonsondergang) || timeMatch(@zonsondergang) ) {
             $set = $1 == 1 ? 0 : 1;
             print "disable_camera_led=$set\n";
             logManager("disable_camera_led=$set");
-
+            exec("/sbin/shutdown -r +5 \"toggeling infrared camera due to sunset. Rebooting withing 5 mins\"");
 #we do nothing with all other lines of the file and simply place them back by printing themout
         }
         else {
@@ -47,10 +47,10 @@ sub timeMatch {
     if (   $parahour == $currenthour
         && $decimalvalueofCurrentmin == $decimalvalueofparamin )
     {
-        return true;
+        return 1;
     }
     else {
-        return false;
+        return 0;
     }
 }
 
@@ -59,6 +59,6 @@ sub logManager {
     open( my $fh, '>>', $logfile ) or die "Could not open file '$logfile' $!";
     my ($content) = @_;
     my ( $sec, $m, $H ) = localtime(time);
-    print $fh $m . ":" . $H . " | " . $content . "\n";
+    print $fh $H . ":" . $m . " | " . $content . "\n";
     close $fh;
 }
