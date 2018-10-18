@@ -1,3 +1,9 @@
+## Date
+```bash
+ cd /etc
+ ln -sf /usr/share/zoneinfo/Europe/Brussels localtime
+```
+
 ## Create own service
 ```bash
  cd /etc/systemd/system/pulseaudio.service
@@ -32,7 +38,9 @@ ExecStart=/usr/bin/pulseaudio –options
 ```
 
 # Infinite loop
+```bash
 while true; do echo 'sleeping' && sleep 9; done
+```
 
 # Delete everyting besides
 ```bash
