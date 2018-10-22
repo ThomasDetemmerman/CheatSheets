@@ -57,7 +57,7 @@ sub timeMatch {
 #usage: logManager($logmessage)
 sub logManager {
     my ($content) = @_;
-    open( my $fh, '>', $logfile ) or die "Could not open file '$logfile' $!";
+    open( my $fh, '>>', $logfile ) or die "Could not open file '$logfile' $!";
     my ( $sec, $m, $H ) = localtime(time);
     print $fh $H . ":" . $m . " | " . $content . "\n";
     close $fh;
