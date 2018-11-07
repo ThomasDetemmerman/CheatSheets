@@ -44,8 +44,9 @@ docker start ec98ccdd9f94 -a
 -a will show all actions.
 
 ## access container
+laatste lijn van dockerfile 'CMD /bin/bash' om container wakker te houden.
 ```bash
- docker exec -t -i a8f0e8326395 /bin/bash
+ docker exec -it a8f0e8326395 /bin/bash
  ```
 ## Stop and Delete
 ### stop and delete all containers
