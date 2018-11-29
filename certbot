@@ -1,1 +1,1 @@
-certbot certonly --nginx --pre-hook "service nginx stop" --post-hook "service nginx start" --force-renew --cert-name detemmerman.xyz -d [sudomain1],[subdomain2]
+certbot certonly --nginx --pre-hook "service nginx stop" --post-hook "service nginx start" --force-renew 
