@@ -4,7 +4,7 @@ https://www.digitalocean.com/community/tutorials/how-to-set-up-and-configure-an-
 ## Creating cert for new client
 ```bash
 cd /etc/openvpn/easy-rsa
-
+source ./vars
 ./build-key client_name
 
 #make versionless
