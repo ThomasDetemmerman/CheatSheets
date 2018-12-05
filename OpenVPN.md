@@ -27,12 +27,15 @@ group nogroup
 -----BEGIN CERTIFICATE-----
 [omitted] #this is for every client the same!
 -----END CERTIFICATE-----
+ca.crt
 </ca>
 <cert>
 [omitted - the entire file]
+file.crt
 </cert>
 <key>
 [omitted - the entire file]
+file.key
 </key>
 
 ```
