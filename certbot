@@ -3,5 +3,7 @@ maak files in /etc/nginx/sites-available/detemmerman.dev.conf
 activeer de site met:
 ln -s /etc/nginx/sites-available/domain.dev.conf /etc/nginx/sites-enabled
 
+sed -i -r 's/(listen .*443)/\1;#/g; s/(ssl_(certificate|certificate_key|trusted_certificate) )/#;#\1/g' /etc/nginx/sites-available/suddomain.domain.tld.conf
 
 certbot certonly --webroot -d subdomain.domain.tld --email info@domain.tld -w /var/www/_letsencrypt -n --agree-tos --force-renewal
+sed -i -r 's/#?;#//g' /etc/nginx/sites-available/detemmerman.dev.conf /etc/nginx/sites-available/suddomain.domain.tld.conf
