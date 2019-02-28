@@ -1,1 +1,7 @@
-certbot certonly --nginx --pre-hook "service nginx stop" --post-hook "service nginx start" --force-renew 
+maak files in /etc/nginx/sites-available/detemmerman.dev.conf
+
+activeer de site met:
+ln -s /etc/nginx/sites-available/domain.dev.conf /etc/nginx/sites-enabled
+
+
+certbot certonly --webroot -d subdomain.domain.tld --email info@domain.tld -w /var/www/_letsencrypt -n --agree-tos --force-renewal
