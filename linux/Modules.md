@@ -1,4 +1,5 @@
 # Modules
+https://linuxconfig.org/how-to-blacklist-a-module-on-ubuntu-debian-linux 
 
 A process that just don't want to be dissabled? For instance bluetooth.d
 
