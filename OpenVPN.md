@@ -15,6 +15,7 @@ cp /etc/openvpn/easy-rsa/openssl-1.0.0.cnf /etc/openvpn/easy-rsa/openssl.cnf
 ### example config file
 ```
 client
+cipher AES-256-CBC
 proto udp
 remote [VPN SERVER IP] [PORT] udp
 dev tun
