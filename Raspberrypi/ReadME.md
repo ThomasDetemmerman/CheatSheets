@@ -19,6 +19,6 @@ network={
 }
 ```
  
-5. Find the IP adress: `sudo nmap -O 192.168.1.0/24`  
+5. Find the IP adress: `sudo nmap -O 192.168.1.0/24`  or `sudo nmap -sn 192.168.1.0/24`
    Look for the IP related to the OS called Raspberry Pi Foundation
 6. Connect: `ssh pi@[IP]`, password: raspberry
