@@ -20,12 +20,14 @@ if [ $(($sunrise - $now))  -lt $fiveMin ] && [ $(($sunrise - $now))  -gt 0 ]
 then 
     echo "$(date): sunrise whitin 5 minutes ($sunrisedate). Dissabling camera led" >> /data/usr/sunsetmanager.log
     sed -i -e 's/disable_camera_led=0/disable_camera_led=1/g' /boot/config.txt
-    shutdown -r +5 "toggeling infrared camera due to sunset. Rebooting within 5 mins"
+    #shutdown -r +5 "toggeling infrared camera due to sunset. Rebooting within 5 mins"
+    reboot
 fi
 
 if [ $(($sunset - $now))  -lt $fiveMin ] && [ $(($sunset - $now))  -gt 0 ]
 then
     echo "$(date): sunset whitin 5 minutes ($sunsetdate). Enabling camera led" >> /data/usr/sunsetmanager.log
     sed -i -e 's/disable_camera_led=1/disable_camera_led=0/g' /boot/config.txt
-    shutdown -r +5 "toggeling infrared camera due to sunset. Rebooting within 5 mins"
+    #shutdown -r +5 "toggeling infrared camera due to sunset. Rebooting within 5 mins"
+    reboot
 fi
