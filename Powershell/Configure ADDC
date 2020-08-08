@@ -1,0 +1,11 @@
+1) install AD DC role
+
+Install-windowsfeature -Name AD-Domain-Services -IncludeManagementTools
+#includemanagementtools zal een GUI installeren zodat je bijvoorbeeld gebruikers hun wachtwoord in de GUI kunt aanpassen
+
+2) promoot naar een DC
+Install-ADForest -DomainName naam.local -InstallDns
+
+3) hernoem de site
+get-ADReplicationSite | rename-ADObject -NewName site_naam
+#make sure there is only one site present. If not, use a filter before the pipe
