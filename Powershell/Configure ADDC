@@ -15,3 +15,8 @@ get-ADReplicationSite | rename-ADObject -NewName site_naam
 # zorg dat AD1 zijn dns naar zichzelf wijst (loopback)
 # zorg dat AD2 zijn dns naar AD1 wijst
 Install-ADDSDomainController -InstallDns -Credential (Get-Credential "CORP\Administrator") -DomainName "corp.contoso.com"
+
+5) maak een reverse dns zone aan
+# forward dns is default aangepaakt.
+Add-DnsServerPrimaryZone -NetwerkId 192.168.1.0/25 -ReplicationScope Domain
+# De computer weet dat dit een reverse zone is op basis van de ingevulde parameters. Indien het een forward zone was, was 'Name' een verplichtte parameter en geen 'netwerkId'
