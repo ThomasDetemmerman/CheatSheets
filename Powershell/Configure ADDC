@@ -37,4 +37,4 @@ Install-WindowsFeature -Name DHCP,RSAT-DHCP
 Add-DhcpServerv4Scope -EndRange 192.168.1.200 -Name RD-default -StartRange 192.168.1.1 -SubnetMask 255.255.255.0
 Add-DhcpServerv4Reservation -ClientId 08-00-27-df-e1-3d -IPAddress 192.168.1.2 -ScopeId 192.168.1.0
 #dhcp option default gateway
- Set-DhcpServerv4OptionValue -Router 192.168.1.1
+ Set-DhcpServerv4OptionValue -Router 192.168.1.1 -DnsServer 192.168.1.1
