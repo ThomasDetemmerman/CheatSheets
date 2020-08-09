@@ -36,3 +36,5 @@ Install-WindowsFeature -Name DHCP,RSAT-DHCP
 #Als je op deze melding/waarschuwing klikt lost de computer het voor jou op. Je kan ook de code gebruiken op p38 van voek "deploying and managing AD with windows powershell"
 Add-DhcpServerv4Scope -EndRange 192.168.1.200 -Name RD-default -StartRange 192.168.1.1 -SubnetMask 255.255.255.0
 Add-DhcpServerv4Reservation -ClientId 08-00-27-df-e1-3d -IPAddress 192.168.1.2 -ScopeId 192.168.1.0
+#dhcp option default gateway
+ Set-DhcpServerv4OptionValue -Router 192.168.1.1
