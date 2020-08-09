@@ -9,3 +9,9 @@ Install-ADForest -DomainName naam.local -InstallDns
 3) hernoem de site
 get-ADReplicationSite | rename-ADObject -NewName site_naam
 #make sure there is only one site present. If not, use a filter before the pipe
+
+4) voeg een tweede dc toe
+# voer stap 1 uit
+# zorg dat AD1 zijn dns naar zichzelf wijst (loopback)
+# zorg dat AD2 zijn dns naar AD1 wijst
+Install-ADDSDomainController -InstallDns -Credential (Get-Credential "CORP\Administrator") -DomainName "corp.contoso.com"
