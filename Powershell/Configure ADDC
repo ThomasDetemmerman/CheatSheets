@@ -1,6 +1,6 @@
 1) install AD DC role
 
-Install-windowsfeature -Name AD-Domain-Services -IncludeManagementTools
+Install-windowsfeature -Name AD-Domain-Services -IncludeManagementTools -IncludeAllSubFeature
 #includemanagementtools zal een GUI installeren zodat je bijvoorbeeld gebruikers hun wachtwoord in de GUI kunt aanpassen
 
 2) promoot naar een DC
@@ -20,3 +20,8 @@ Install-ADDSDomainController -InstallDns -Credential (Get-Credential "CORP\Admin
 # forward dns is default aangepaakt.
 Add-DnsServerPrimaryZone -NetwerkId 192.168.1.0/25 -ReplicationScope Domain
 # De computer weet dat dit een reverse zone is op basis van de ingevulde parameters. Indien het een forward zone was, was 'Name' een verplichtte parameter en geen 'netwerkId'
+
+6) configureer DC1 as NAT
+Install-WindowsFeature -Name RemoteAccess -IncludeAllSubFeature -IncludeManagementTools
+# (GUI) Tools > routing and remote acces > DC1 (local) > right click > configure
+# vergeet niet om de gateway manueel bij de interface van DC2 aan te passen
