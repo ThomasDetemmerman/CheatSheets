@@ -25,3 +25,14 @@ Add-DnsServerPrimaryZone -NetwerkId 192.168.1.0/25 -ReplicationScope Domain
 Install-WindowsFeature -Name RemoteAccess -IncludeAllSubFeature -IncludeManagementTools
 # (GUI) Tools > routing and remote acces > DC1 (local) > right click > configure
 # vergeet niet om de gateway manueel bij de interface van DC2 aan te passen
+
+7) configureer DHCP
+# Get-WindowsFeature | Where-Object { $_.Name -like "*DHCP*"}
+# hierin zien we: DHCP en RSAT-DHCP, dus ipv "Install-windowsfeature -Name DHCP -IncludeManagementTools -IncludeAllSubFeature"
+# kunnen we ook schrijven
+Install-WindowsFeature -Name DHCP,RSAT-DHCP
+
+#je moet eerst twee security groups maken. Indien je deze stap overslaat zal de dhcp niet werken. Gelukkig krijg je hier wel melding van in de "server manager" > DHCP.
+#Als je op deze melding/waarschuwing klikt lost de computer het voor jou op. Je kan ook de code gebruiken op p38 van voek "deploying and managing AD with windows powershell"
+Add-DhcpServerv4Scope -EndRange 192.168.1.200 -Name RD-default -StartRange 192.168.1.1 -SubnetMask 255.255.255.0
+Add-DhcpServerv4Reservation -ClientId 08-00-27-df-e1-3d -IPAddress 192.168.1.2 -ScopeId 192.168.1.0
