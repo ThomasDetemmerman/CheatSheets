@@ -38,3 +38,8 @@ Add-DhcpServerv4Scope -EndRange 192.168.1.200 -Name RD-default -StartRange 192.1
 Add-DhcpServerv4Reservation -ClientId 08-00-27-df-e1-3d -IPAddress 192.168.1.2 -ScopeId 192.168.1.0
 #dhcp option default gateway
  Set-DhcpServerv4OptionValue -Router 192.168.1.1 -DnsServer 192.168.1.1
+ 
+ 8) create and delete OU
+ New-ADOrganizationalUnit -Name test2 -Path "OU=test,DC=detemmerman,DC=local"
+ Set-ADOrganizationalUnit -Identity "OU=test,DC=detemmerman,DC=local" -ProtectedFromAccidentalDeletion $false
+ Remove-ADOrganizationalUnit -Identity "OU=test,DC=detemmerman,DC=local" -Confirm -Recursive
