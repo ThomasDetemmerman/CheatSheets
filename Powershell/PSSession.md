@@ -14,7 +14,10 @@ example: change rights to the configurationfile
 ```
 Set-PSSessionConfiguration -name a -ShowSecurityDescriptorUI
 ```
-
+example: change the run as
+```
+Set-PSSessionConfiguration -name a -RunAsCredential domain\user
+```
 ## Connect to specific configuration
 ```
 Invoke-PSSession -computerName <ip> -credential (get-credential) -ConfigurationName a
