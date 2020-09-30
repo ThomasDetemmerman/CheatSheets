@@ -1,11 +1,11 @@
-find a command
-
+## find a command
+```
 get-command *searchterm*
-
-get help
-
+```
+## get help
+```
 get-help command
-
+```
 
 # Invoke-Command
 If you try to connect from outside the network, you will need to use HTTPS which requires certificates.
