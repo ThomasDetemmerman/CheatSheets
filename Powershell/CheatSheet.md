@@ -1,3 +1,9 @@
+## change keyboard layout
+```
+set Set-WinUserLanguageList be-nl
+```
+
+
 ## find a command
 ```
 get-command *searchterm*
