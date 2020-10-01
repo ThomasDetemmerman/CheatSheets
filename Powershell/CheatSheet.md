@@ -1,6 +1,6 @@
 ## change keyboard layout
 ```
-set Set-WinUserLanguageList be-nl
+set Set-WinUserLanguageList nl-be (taal - land)
 ```
 
 
