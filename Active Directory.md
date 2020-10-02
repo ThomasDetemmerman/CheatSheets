@@ -1,4 +1,6 @@
 ## Group policies
+- _De updates op de GPO op de DC worden onmiddelijk gepushed naar de DC die de PDC emulator rol vervult._
+
 ### Group policies results van toepassing op client
 ```
 gpresult /R
