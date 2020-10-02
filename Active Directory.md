@@ -6,6 +6,7 @@ gpresult /R
 Run je best als admin om ook user policies te zien
 Je kan ook vanop uw DC de uiteindelijke policies van uw client opvragen maar daarvoor moet je via WMI kunnen verbinden en dit moet je toelaten in de firewall. Gelukkig kun je dit
 ook via GPO's. Zie `starter gpo's`.Resultaten staan in de map `Group policy results`
+Je kan er ook de events zien of de updates geslaagd waren en wanneer.
 
 ### GPO's onmiddelijk uitvoeren.
 - `gpupdate`
