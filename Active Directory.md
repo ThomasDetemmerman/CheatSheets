@@ -10,7 +10,7 @@ Je kan er ook de events zien of de updates geslaagd waren en wanneer.
 
 ### Group policies modelling
 Analoog aan de vorige maar is meer een "whatif". Dit is zonder client informatie. Dus firewall kan gesloten blijven maar zaken zoals wmi filtering 
-zal niet altijd werken. Bv. als je filtert op current disk space available.
+zal niet altijd werken. Bv. als je filtert op current disk space available. Windows zal jou dus wel paar vragen stellen om de scenario te simuleren. Handig als je bv wilt zien wat er gebeurd als je een gebruiker van OU of groep wijzigt.
 
 ### GPO's onmiddelijk uitvoeren.
 - `gpupdate`
