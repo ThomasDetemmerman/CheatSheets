@@ -1,5 +1,6 @@
 ## Group policies
 - _De updates op de GPO op de DC worden onmiddelijk gepushed naar de DC die de PDC emulator rol vervult._
+- Filter -> de GPO is van toepassing op deze group. Hoe kan je dan rechten weigeren? -> ga bij de GPO naar delegation en neem het recht "apply group policy" weg
 
 ### Group policies results van toepassing op client
 ```
