@@ -13,3 +13,12 @@ git rebase upstream/master
 git push origin
 #now you can create a PR
 ```
+
+# Add local existing repo to new repo
+```
+git init
+git remote add origin <url new online repo>
+git add .
+git commit 
+```
+
