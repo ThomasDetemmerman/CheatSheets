@@ -1,4 +1,5 @@
 # Advanced Debugging
+Perform the following steps in sequence.
 
 ### Init variables
 ```
