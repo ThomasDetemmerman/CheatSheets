@@ -8,7 +8,7 @@ trigger:
 - master
 
 parameters:
- projectPreFix: 'test'
+ projectPreFix: test
  
 variables:
  creator : 'thomas'
