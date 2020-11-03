@@ -8,4 +8,4 @@
 - each job is parallel by default, unless you define a `dependsOn` *
 - note that the powershell command is executed on an Ubuntu OS using powershell core.
 
-* _The course says that jobs are executed sequencially unless you define dependsOn: none. From my test, that statements seems incorrect._
+`* _The course says that jobs are executed sequencially unless you define dependsOn: none. From my test, that statements seems incorrect._
