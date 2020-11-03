@@ -8,7 +8,9 @@ trigger:
 - master
 
 parameters:
- projectPreFix: test
+- name: projectPreFix
+  type: string
+  default: default
  
 variables:
  creator : 'thomas'
