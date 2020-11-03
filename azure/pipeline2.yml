@@ -13,20 +13,27 @@ variables:
 pool:
   vmImage: 'ubuntu-latest'
 
+# first stage
 stages:
 - stage: Build
   jobs:
   - job: BuildJob
     steps:
     - script: echo Building!
+    
+# second stage
 - stage: Test
   jobs:
   - job: TestOnWindows
     steps:
-    - script: echo Testing on Windows!
+    - pwsh: |
+    Write-Host "This multiline script always runs in PowerShell Core."
+    Write-Host "Even on non-Windows machines!"
   - job: TestOnLinux
     steps:
     - script: echo Testing on Linux!
+    
+# third stage
 - stage: Deploy
   jobs:
   - job: Deploy
