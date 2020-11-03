@@ -19,7 +19,7 @@ stages:
   jobs:
   - job: BuildJob
     steps:
-    - script: echo Building!
+    - script: echo Building! - Created by $(creator)
     
 # second stage
 - stage: Test
