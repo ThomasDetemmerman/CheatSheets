@@ -27,8 +27,8 @@ stages:
   - job: TestOnWindows
     steps:
     - pwsh: |
-    Write-Host "This multiline script always runs in PowerShell Core."
-    Write-Host "Even on non-Windows machines!"
+      Write-Host "This multiline script always runs in PowerShell Core."
+      Write-Host "Even on non-Windows machines!"
   - job: TestOnLinux
     steps:
     - script: echo Testing on Linux!
