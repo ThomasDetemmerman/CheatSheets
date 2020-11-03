@@ -17,7 +17,7 @@ jobs:
   - job: P1
     displayName: 'Paralleljob 1'
     steps:
-    - script: echo Job A step 1
+    - script: echo Job A step 1 - Created by $(creator)
       displayName: 'Paralleljob 1.1'
 
     - script: |
