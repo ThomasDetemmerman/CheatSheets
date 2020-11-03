@@ -7,6 +7,9 @@ name: 1.0$(Rev:.r)
 trigger:
 - master
 
+parameters:
+ projectPreFix: 'test'
+ 
 variables:
  creator : 'thomas'
 
@@ -15,14 +18,14 @@ pool:
 
 # first stage
 stages:
-- stage: Build
+- stage: ${{ parameters.projectPreFix }}_Build
   jobs:
   - job: BuildJob
     steps:
     - script: echo Building! - Created by $(creator)
     
 # second stage
-- stage: Test
+- stage:  ${{ parameters.projectPreFix }}_Test
   jobs:
   - job: TestOnWindows
     steps:
@@ -34,7 +37,7 @@ stages:
     - script: echo Testing on Linux!
     
 # third stage
-- stage: Deploy
+- stage:  ${{ parameters.projectPreFix }}_Deploy
   jobs:
   - job: Deploy
     steps:
