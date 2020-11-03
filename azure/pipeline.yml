@@ -1,0 +1,42 @@
+# Starter pipeline
+# Start with a minimal pipeline that you can customize to build and deploy your code.
+# Add steps that build, run tests, deploy, and more:
+# https://aka.ms/yaml
+name: 1.0$(Rev:.r)
+
+trigger:
+- master
+
+variables:
+ creator : 'thomas'
+
+pool:
+  vmImage: 'ubuntu-latest'
+
+jobs:
+  - job: P1
+    displayName: 'Paralleljob 1'
+    steps:
+    - script: echo Job A step 1
+      displayName: 'Paralleljob 1.1'
+
+    - script: |
+        wait 1
+        echo Job B step 2
+      displayName: 'Paralleljob 1.2'
+
+  - job: P2
+    displayName: 'Paralleljob 2'
+    #otherwise, this job will wait unit Parralleljob 1 is finished
+    dependsOn: []
+    steps:
+      - script: echo Job B step 1
+        displayName: 'Paralleljob 2.1'
+  
+  - job: P3
+    displayName: 'Finallize'
+    dependsOn: ['P1', 'P2']
+    steps:
+      - script: echo Finallizing
+        displayName: 'last step'
+      
