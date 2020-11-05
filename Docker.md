@@ -20,7 +20,11 @@ login
  
  ## Build image
  ```bash
- docker build -t vop_iot/tick .
+ #for Dockerfile in current directory
+ docker build -t registeryUserName/containername .
+ 
+ #for name.Dockerfile
+ docker build -t registeryUserName/containername -f name.Dockerfile .
  ```
 ## show images
 ```bash 
