@@ -1,0 +1,10 @@
+# Kubernetes
+
+## View website running in minikube
+
+minikube service list
+minikube service <myService>
+
+## View dashboard of minikube including errors
+
+minikube dashboard
