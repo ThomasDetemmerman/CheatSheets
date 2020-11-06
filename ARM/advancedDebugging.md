@@ -19,7 +19,6 @@ $operations = Get-AzResourceGroupDeploymentOperation -DeploymentName test -Resou
 ### Print requests and responses
 ```
 foreach($operation in $operations)
-
  {
      Write-Host $operation.id
      Write-Host "Request:"
