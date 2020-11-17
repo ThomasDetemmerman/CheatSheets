@@ -15,5 +15,7 @@
 list images and SKU's
 ```
 az vm image list-offers --location westeurope --publisher MicrosoftWindowsServer
-az vm image list-skus --location westeurope --publisher MicrosoftWindowsServer --offer windowsserver
+az vm image list-skus --location westeurope --publisher MicrosoftWindowsServer --offer windowsserver0
+az vm image list-offers --location westus --publisher RedHat
+az vm image list-skus --location westus --publisher RedHat --offer RHEL
 ```
