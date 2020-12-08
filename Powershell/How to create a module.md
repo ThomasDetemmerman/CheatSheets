@@ -36,6 +36,6 @@ Export-ModuleMember -function Test-IPRange
 
 4. Make sure to update these lines
 ```
-RootModule = 'helperFunctions.psm1'
+RootModule = 'myFirstHelperModule.psm1'
 FunctionsToExport = @("Test-IPRange")
 ```
