@@ -8,7 +8,7 @@ PSFunctionApp
  | | - run.ps1
  | | - function.json
  | - Modules  <---------------------------------
- | | - myFirstHelperModule  <---------------------------------
+ | | - myFirstHelperModule  <--------------------------------- Same name as its children
  | | | - myFirstHelperModule.psd1
  | | | - myFirstHelperModule.psm1
  | | - mySecondHelperModule
@@ -21,7 +21,8 @@ PSFunctionApp
  | - extensions.csproj
  | - bin
 ```
-1. Create a file myFirstHelperModule.psm1
+1. Create a folder myFirstHelperModule
+2. Create a file myFirstHelperModule.psm1 in that folder
 ```
 function Test-IPRange {
     return $isValid
@@ -30,5 +31,10 @@ function Test-IPRange {
 Export-ModuleMember -function Test-IPRange    
 ```
 
-2. New-ModuleManifest -path ./helperFunctions.psd1 -moduleversion "1.0" -Author "my name"
+3. New-ModuleManifest -path ./helperFunctions.psd1 -moduleversion "1.0" -Author "my name"
  - Note: you created a psm1 file but here you write psd1!
+
+4. Make sure to update this line
+```
+FunctionsToExport = @("Test-IPRange")
+```
