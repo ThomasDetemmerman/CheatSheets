@@ -1,7 +1,7 @@
 # Kubernetes
 
 ## Getting started
-minikube start --vm-driver=hyperv 
+minikube start --vm-driver=hyperv   
 If you get errors: `minikube delete` 
 
 ## View website running in minikube
