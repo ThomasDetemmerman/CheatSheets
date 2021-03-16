@@ -12,3 +12,10 @@ Je kan enkel describe pod doen bij niet default namespace als je '-n' gebruikt
 
 kubectl describe pod myPod
 kubectl describe service myService
+
+## Quiz
+
+| Column 1       | Column 2     | 
+| :------------- | :---------- |
+|  find a pod when you don't know the namespace | kubectl get pods --all-namespaces   | 
+| You Can Also   | Put Pipes In | 
