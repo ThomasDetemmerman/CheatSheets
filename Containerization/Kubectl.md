@@ -18,4 +18,4 @@ kubectl describe service myService
 | Column 1       | Column 2     | 
 | :------------- | :---------- |
 |  find a pod when you don't know the namespace | kubectl get pods --all-namespaces   | 
-| You Can Also   | Put Pipes In | 
+| Create a deployment YAML file but you don't know the structure | kubectl create deployment --image=nginx nginx --dry-run=client -o yaml > nginx-deployment.yaml | 
