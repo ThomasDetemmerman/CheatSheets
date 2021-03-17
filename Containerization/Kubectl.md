@@ -20,4 +20,4 @@ kubectl describe service myService
 |  find a pod when you don't know the namespace | kubectl get pods --all-namespaces   | 
 | Create a deployment YAML file but you don't know the structure | kubectl create deployment --image=nginx nginx --dry-run=client -o yaml > nginx-deployment.yaml | 
 |  Show all pods with their labels | kubectl get pods --show-labels   | 
-|  Show pods with label env=prod and tier=backend| kubectl get pods --selector env=prod,tier=backend   |
+|  Show pods with label env=prod and tier=backend| kubectl get pods --selector (-l) env=prod,tier=backend  |
