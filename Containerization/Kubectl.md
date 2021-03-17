@@ -21,3 +21,5 @@ kubectl describe service myService
 | Create a deployment YAML file but you don't know the structure | kubectl create deployment --image=nginx nginx --dry-run=client -o yaml > nginx-deployment.yaml | 
 |  Show all pods with their labels | kubectl get pods --show-labels   | 
 |  Show pods with label env=prod and tier=backend| kubectl get pods --selector (-l) env=prod,tier=backend  |
+| Taint node Node01 so it only allows production applications. Already running nonprod applications should be evicted | kubectl taint nodes Node01 env=prod:NoExecute |
+| What are the three taint effects? | NoExecute, NoSchedule, PreferNoSchedule |
