@@ -25,7 +25,7 @@ kubectl describe service myService
 | What are the three taint effects? | NoExecute, NoSchedule, PreferNoSchedule |
 | Where are the manifests stored used to run the pods that control the cluster | /etc/kubernetes/manifests |
 | Which nodes/pods consume the most resources | kubectl top nodes/pods |
-| Show *live* the logs of the second container (c2) of pod p1 | kubectl logs *-f* p1 c2 |
+| Show **live** the logs of the second container (c2) of pod p1 | kubectl logs **-f** p1 c2 |
 
 
 
