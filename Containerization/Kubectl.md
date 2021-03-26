@@ -26,6 +26,6 @@ kubectl describe service myService
 | Where are the manifests stored used to run the pods that control the cluster | /etc/kubernetes/manifests |
 | Which nodes/pods consume the most resources | kubectl top nodes/pods |
 | Show **live** the logs of the second container (c2) of pod p1 | kubectl logs **-f** p1 c2 |
-
+| Show the logs of all pods in a deployment. These pods have a label called name=app1 | kubectl logs -l (--selector) name=app1 |
 
 
