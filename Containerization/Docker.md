@@ -5,7 +5,20 @@ docker run -it ubuntu bash
 or
 docker run -it --entrypoint /bin/bash <image>
 ```
- ## Push to cloud
+
+## Entrypoint vs CMD
+* CMD: command line options overwrite CMD statement
+* Entrypoint: command line options are appended (by default)
+
+Use case:
+```sh
+FROM Ubuntu
+ENTRYPOINT sleep
+CMD 5
+```
+if you run this dockerfile, 5 is appended to sleep and the container will sleep for 5 seconds. If you run `docker run thisImage 10`, then the container will sleep for 10 seconds because the 5 is overwritten. If you realy need to update the entrypoint, you specify --entrypoint myOwnSleepProgram
+
+## Push to cloud
 ### Create image of running container
 ```sh
 docker commit c8a30a9124a3 thomasdetemmerman/telegraf-coap
