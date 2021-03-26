@@ -29,6 +29,7 @@ kubectl describe service myService
 | Show the logs of all pods in a deployment. These pods have a label called name=app1 | kubectl logs -l (--selector) name=app1 |
 | How to rollback to a previous deployment? | kubectl rollout undo deployment/my-deployment (This will drain the current replica set and populate the previous one) |
 | You upgrade a deployment. What is it's status? | kubectl rollout status deployment/my-deployment |
+| Create a config map| kubectl create cm myMap --from-literal=NAME=myName|
 
 
 
