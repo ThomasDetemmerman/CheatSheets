@@ -24,4 +24,6 @@ kubectl describe service myService
 | Taint node Node01 so it only allows production applications. Already running nonprod applications should be evicted | kubectl taint nodes Node01 env=prod:NoExecute |
 | What are the three taint effects? | NoExecute, NoSchedule, PreferNoSchedule |
 | Where are the manifests stored used to run the pods that control the cluster | /etc/kubernetes/manifests |
+| Which nodes/pods consume the most resources | kubectl top nodes/pods |
+
 
