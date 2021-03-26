@@ -23,3 +23,5 @@ kubectl describe service myService
 |  Show pods with label env=prod and tier=backend| kubectl get pods --selector (-l) env=prod,tier=backend  |
 | Taint node Node01 so it only allows production applications. Already running nonprod applications should be evicted | kubectl taint nodes Node01 env=prod:NoExecute |
 | What are the three taint effects? | NoExecute, NoSchedule, PreferNoSchedule |
+| Where are the manifests stored used to run the pods that control the cluster | /etc/kubernetes/manifests |
+
