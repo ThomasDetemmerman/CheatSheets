@@ -30,6 +30,6 @@ kubectl describe service myService
 | How to rollback to a previous deployment? | kubectl rollout undo deployment/my-deployment (This will drain the current replica set and populate the previous one) |
 | You upgrade a deployment. What is it's status? | kubectl rollout status deployment/my-deployment |
 | Create a config map| kubectl create cm myMap --from-literal=NAME=myName|
-
+| Get a full example of a pod file | kubectl explain pod --recursive (pipe to less) |
 
 
