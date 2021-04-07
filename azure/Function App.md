@@ -24,3 +24,9 @@ az functionapp create --resource-group myResourceGroup --consumption-plan-locati
 func azure functionapp publish <FunctionAppName>
 curl https://< app_name >.azurewebsites.net/api/MyHttpTrigger?name=< yourname >
 ```
+
+## Network troubleshooting
+List of executables
+- nameresolver.exe
+- tcpping.exe
+- SET WEBSITE_DNS_
