@@ -31,5 +31,6 @@ kubectl describe service myService
 | You upgrade a deployment. What is it's status? | kubectl rollout status deployment/my-deployment |
 | Create a config map| kubectl create cm myMap --from-literal=NAME=myName|
 | Get a full example of a pod file | kubectl explain pod --recursive (pipe to less) |
+| Can Tom create pods in the namespace test? | kubectl auth can-i create pods --as tom --namespace test |
 
 
