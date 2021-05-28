@@ -32,6 +32,7 @@ kubectl describe service myService
 | Create a config map| kubectl create cm myMap --from-literal=NAME=myName|
 | Get a full example of a pod file | kubectl explain pod --recursive (pipe to less) |
 | Can Tom create pods in the namespace test? | kubectl auth can-i create pods --as tom --namespace test |
-|View with wich options the cluster was created|kubectl describe pod kube-apiserver-controlplane -n kube-system|
+| View with wich options the cluster was created|kubectl describe pod kube-apiserver-controlplane -n kube-system|
+| Show all pods and their labels| kubectl get pods --show-labels|
 
 
