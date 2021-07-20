@@ -35,5 +35,6 @@ kubectl describe service myService
 | View with wich options the cluster was created|kubectl describe pod kube-apiserver-controlplane -n kube-system|
 |Untain master node|kubectl taint nodes controlplane node-role.kubernetes.io/master-|
 | Show all pods and their labels| kubectl get pods --show-labels|
+|Create static pod manifest|kubectl run --restart=Never --image=busybox static-busybox --dry-run=client -o yaml --command -- sleep 1000 > /etc/kubernetes/manifests/static-busybox.yaml|
 
 
