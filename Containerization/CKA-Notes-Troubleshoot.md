@@ -2,6 +2,29 @@
 
 ## Cluster management
 
+### Upgrade an AKS cluster
+
+** Master node **
+1. kubectl drain master
+2. kubectl cordon master #this is not needed unless you do have 'user' pods running on master which you shouldn't.
+3. apt-get update
+4. apt install kubeadm=1.20.0-00 #apt-get install -y --allow-change-held-packages kubeadm=1.20.0-00 #preperations.
+5. kubeadm version
+6. kubeadm upgrade apply v1.20.0 #upgrade cluster
+7. kubectl version --short # server is upgraded
+8. apt install kubelet=1.20.0-00 #kubectl get nodes will return the old version. This is because the kubelet is not updated on the master.
+9. kubectl uncordon master
+10. `kubectl cordon node01 && kubectl drain node01`
+** node01 **
+11. apt install kubeadm=1.20.0-00
+12. kubeadm upgrade node
+13. apt install kubelet=1.20.0-00
+** Master node **
+14. kubectl uncordon node01
+
+
+[More info](https://kubernetes.io/docs/tasks/administer-cluster/kubeadm/kubeadm-upgrade/)
+
 ### Control plane
 You can view how the cluster is configured as follows:
 - `kubectl get pods -n kube-system` : If the cluster was bootstrapped (deployed using kubeadm)
