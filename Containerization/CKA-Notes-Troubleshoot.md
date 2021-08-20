@@ -16,3 +16,15 @@ You can view how the cluster is configured as follows:
  Kube proxy 
  - kubeadm deploys it as a deamonsets
  - when you download it manually, you will need to install it manually on all nodes.
+
+## Kubernetes objects
+
+### service
+- nodeport:
+  - A port on the nodes is allocated
+  - TargetPort: port of de pods
+  - port: port on de service (the port from where the traffic leaves the service to go to the pod)
+  - nodeport: the port on the node
+- clusterip
+ - IP whitin the cluster. Used for only internal traffic. Ex. backend frontend traffic
+- loadbalancers
