@@ -11,3 +11,8 @@ You can view how the cluster is configured as follows:
 
  ### Kubelets
  This can not be bootstrapped and is always deployed manually. Therefore, it's a **service**. Hence `ps -aux | grep kubelet`
+ 
+ ### Networking
+ Kube proxy 
+ - kubeadm deploys it as a deamonsets
+ - when you download it manually, you will need to install it manually on all nodes.
