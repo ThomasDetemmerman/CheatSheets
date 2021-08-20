@@ -26,5 +26,5 @@ You can view how the cluster is configured as follows:
   - port: port on de service (the port from where the traffic leaves the service to go to the pod)
   - nodeport: the port on the node
 - clusterip
- - IP whitin the cluster. Used for only internal traffic. Ex. backend frontend traffic
+  - IP whitin the cluster. Used for only internal traffic. Ex. backend frontend traffic
 - loadbalancers
