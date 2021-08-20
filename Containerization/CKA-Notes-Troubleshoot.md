@@ -28,3 +28,7 @@ You can view how the cluster is configured as follows:
 - clusterip
   - IP whitin the cluster. Used for only internal traffic. Ex. backend frontend traffic
 - loadbalancers
+
+### pods: args and commands
+![afbeelding](https://user-images.githubusercontent.com/10938144/130236209-e118f3f1-a28c-4e3e-8885-437c040b5af9.png)
+
