@@ -36,5 +36,6 @@ kubectl describe service myService
 |Untain master node|kubectl taint nodes controlplane node-role.kubernetes.io/master-|
 | Show all pods and their labels| kubectl get pods --show-labels|
 |Create static pod manifest|kubectl run --restart=Never --image=busybox static-busybox --dry-run=client -o yaml --command -- sleep 1000 > /etc/kubernetes/manifests/static-busybox.yaml|
+|Revert to a previous deployment|When performing an  update, a new rs is created and scaled up one at a time while the old one is scaled down one at a time. The old rs is reserved so it can easily be scaled up again if the update goes wrong. kubectl rollout undo myDeployment|
 
 
