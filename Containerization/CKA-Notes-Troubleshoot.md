@@ -27,6 +27,7 @@
 
 ### Control plane
 You can view how the cluster is configured as follows:
+- `ps -aux | grep kubelet`
 - `kubectl get pods -n kube-system` : If the cluster was bootstrapped (deployed using kubeadm)
 - `cat /etc/kubernetes/manifests/****.yaml `: : If the cluster was bootstrapped (deployed using kubeadm). However, this is the default location. Annother location of these static pods can be defined. Then you'll have to use px -aux to find them.
 - `cat /lib/systemd/system/*****.service` : If the cluster was manually deployed (the hard way)
