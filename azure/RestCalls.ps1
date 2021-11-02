@@ -9,13 +9,13 @@ $container       = '********'
 $filename        = '********'
 $spnclientid     = '********'
 $spnclientsecret = '********'
-
+$baseurl         = "https://$staname.blob.core.windows.net"
 # get bearer token
 $auturl =  "https://login.microsoftonline.com/$tenant/oauth2/token"
 $method = 'POST'
 $header = @{'Content-Type'= 'application/x-www-form-urlencoded'}
 $body = @{
-           "resource"     = "https://$staname.blob.core.windows.net" #if not set: error invalid audience"
+           "resource"     = $baseurl  #if not set: error invalid audience"
           "client_id"     = $spnclientid
           "grant_type"    = "client_credentials"
           "client_secret" = $spnclientsecret
@@ -33,8 +33,8 @@ $header = @{
 }
 
 
-$urir = "https://$staname.blob.core.windows.net/" + $container + "?restype=container&comp=list"
-$urir = "https://$staname.blob.core.windows.net/" + $container + $filename
+$urir = $baseurl  + $container + "?restype=container&comp=list"
+$urir = $baseurl  + $container + $filename
 
 $method = 'GET'
 (invoke-webrequest -Method $method -Uri $urir -Headers $header).content
