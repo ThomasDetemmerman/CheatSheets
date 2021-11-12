@@ -1,3 +1,10 @@
+## Give azure ad user read permissions 
+```
+CREATE USER [externaluser] FROM  EXTERNAL PROVIDER  WITH DEFAULT_SCHEMA=[dbo]
+GO
+ALTER ROLE db_datareader ADD MEMBER [externaluser]
+GO
+```
 ## How to create a read-only syst user
 1. create a connection in your local "microsoft SQL server management studio"
 2. select master database
