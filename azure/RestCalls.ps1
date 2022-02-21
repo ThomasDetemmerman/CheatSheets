@@ -9,7 +9,7 @@ $container       = '********'
 $filename        = '********'
 $spnclientid     = '********'
 $spnclientsecret = '********'
-$baseurl         = "https://$staname.blob.core.windows.net"
+$baseurl         = "https://$staname.blob.core.windows.net" #for resources: https://management.azure.com
 # get bearer token
 $auturl =  "https://login.microsoftonline.com/$tenant/oauth2/token"
 $method = 'POST'
