@@ -13,7 +13,7 @@ $roleDefinitionID = $keyvaultadmin
 $settinga = New-Object Microsoft.Open.MSGraph.Model.AzureADMSPrivilegedRuleSetting
 $settinga.RuleIdentifier = "NotificationRule"
 #go to pim, configure the notifications and look in de debug console to "network" and check the data that is patched.
-$settinga.Setting = '{"policies":[{"deliveryMechanism":"email","setting":[{"customreceivers":["servicedesk@fostplus.be"],"isdefaultreceiverenabled":false,"notificationlevel":2,"recipienttype":2},{"customreceivers":null,"isdefaultreceiverenabled":true,"notificationlevel":2,"recipienttype":0},{"customreceivers":null,"isdefaultreceiverenabled":true,"notificationlevel":2,"recipienttype":1}]}]}'
+$settinga.Setting = '{"policies":[{"deliveryMechanism":"email","setting":[{"customreceivers":["mail@mail.be"],"isdefaultreceiverenabled":false,"notificationlevel":2,"recipienttype":2},{"customreceivers":null,"isdefaultreceiverenabled":true,"notificationlevel":2,"recipienttype":0},{"customreceivers":null,"isdefaultreceiverenabled":true,"notificationlevel":2,"recipienttype":1}]}]}'
 
 $settingadmin = New-Object Microsoft.Open.MSGraph.Model.AzureADMSPrivilegedRuleSetting
 $settingadmin.RuleIdentifier = "NotificationRule"
