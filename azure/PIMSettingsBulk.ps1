@@ -43,3 +43,21 @@ function set-PIMRoleAssignmentsettings {
 }
 
 
+function set-PIMRoleAssignment {
+    param (
+        $RoleDefinitionName,
+        $subscriptionID,
+        $ResourceGroupName
+
+    )
+
+    $schedule = New-Object Microsoft.Open.MSGraph.Model.AzureADMSPrivilegedSchedule
+    $schedule.Type = "Once"
+    $schedule.StartDateTime = (Get-Date).ToUniversalTime().ToString("yyyy-MM-ddTHH:mm:ss.fffZ")
+
+    $roleDefinitionID = $(Get-AzRoleDefinition -Name $RoleDefinitionName).Id
+    $ResourceGroupID = "/subscriptions/$subscriptionID/resourceGroups/$ResourceGroupName"
+    Open-AzureADMSPrivilegedRoleAssignmentRequest -ProviderId 'AzureResources' -ResourceId $ResourceGroupPIMResourceID -RoleDefinitionId $roleDefinitionID -SubjectId $subjectid -Type 'adminAdd' -AssignmentState 'Eligible' -schedule $schedule
+
+}
+
