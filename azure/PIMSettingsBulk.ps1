@@ -38,7 +38,7 @@ function set-PIMRoleAssignmentsettings {
     $SubscriptionPIMID = (Get-AzureADMSPrivilegedResource -ProviderId 'AzureResources' -Filter "ExternalId eq '$ResourceGroupID'").Id
     $RoleDefinitionPIMID = (Get-AzureADMSPrivilegedRoleDefinition -ProviderId 'AzureResources' -Filter "ExternalId eq '/subscriptions/$subscriptionID/providers/Microsoft.Authorization/roleDefinitions/$roleDefinitionID'" -ResourceId $subscriptionPIMID).Id
     $rolesettingid = (Get-AzureADMSPrivilegedRoleSetting -ProviderId 'AzureResources' -Filter "ResourceId eq '$SubscriptionPIMID' and RoleDefinitionId eq '$RoleDefinitionPIMID'").id
-    Set-AzureADMSPrivilegedRoleSetting -ProviderId 'AzureResources' -Id $rolesettingid -ResourceId $SubscriptionPIMID -RoleDefinitionId $roleDefinitionID -UserMemberSettings $UserMemberSettings  -AdminEligibleSettings $settingadmin
+    Set-AzureADMSPrivilegedRoleSetting -ProviderId 'AzureResources' -Id $rolesettingid -ResourceId $SubscriptionPIMID -RoleDefinitionId $roleDefinitionID -UserMemberSettings $UserMemberSettings  -AdminEligibleSettings $AdminEligibleSettings
     
 }
 
