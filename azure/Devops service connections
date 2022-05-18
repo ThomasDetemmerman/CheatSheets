@@ -1,0 +1,1 @@
+openssl pkcs12 -in filename.pfx -out cert.pem -nodes
