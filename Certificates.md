@@ -19,6 +19,8 @@ Verifying - Enter Export Password:
 https://www.sslshopper.com/ssl-checker.html
 
 ### If the certificate is local
-open openssl (on windows, you might have to look for the openssl tool in the search bar instead of via the terminal)
-Convert to PEM: openssl pkcs12 -in file.pfx -out file.pem -nodes
-open using a text editor. Here, you will should see intermediate certificates. Using the browser or your local certificate store wont work because it is "enriched" by those tools.
+- open openssl (on windows, you might have to look for the openssl tool in the search bar instead of via the terminal)
+- Convert to PEM: openssl pkcs12 -in file.pfx -out file.pem -nodes
+- open using a text editor. Here, you will should see intermediate certificates. Using the browser or your local certificate store wont work because it is "enriched" by those tools.
+
+### Adding an intermediate certificate to your certificate
