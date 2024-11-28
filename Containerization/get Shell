@@ -1,1 +1,2 @@
-kubectl run my-shell --rm -i --tty --image ubuntu -- bash
+kubectl run my-shell --rm -i --tty --image ubuntu -c my-shell -- bash
+apt update && apt install curl
